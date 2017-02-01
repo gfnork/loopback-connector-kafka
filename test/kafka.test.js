@@ -9,7 +9,7 @@ var producer = new kafka.HighLevelProducer(client);
 var connector = require('..');
 var settings = {
     connectionString: 'localhost:2181'
-}
+};
 var dataSource = { settings: settings };
 connector.initialize(dataSource);
 
@@ -20,7 +20,7 @@ consumer.on('message', function (message) {
 
 consumer.on('error', function (error) {
     console.log('Consumer error: ', error);
-})
+});
 
 producer.createTopics([ topic ], function (err) {
     if (err) {
@@ -34,5 +34,4 @@ producer.createTopics([ topic ], function (err) {
             else console.log('Message send');
         });
     }, 1000);
-})
-
+});

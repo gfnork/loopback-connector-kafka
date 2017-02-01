@@ -14,7 +14,8 @@ npm install loopback-connector-kafka --save
     var DataSource = require('loopback-datasource-juggler').DataSource;
     // The options for kafka-node
     var options = {
-        connectionString: 'localhost:2181/kafka0.8'
+        connectionString: 'localhost:2181/kafka0.8',
+        topic: 'testTopic'
     };
     var dataSource = new DataSource('kafka', options);
 ```
@@ -25,7 +26,8 @@ Or configure it in `datasources.json`
 {
     "kafka": {
         "connector": "kafka",
-        "connectionString": "127.0.0.1:2181/kafka0.8"
+        "connectionString": "127.0.0.1:2181/kafka0.8",
+        "topic": "testTopic"
     }
 }
 ```
